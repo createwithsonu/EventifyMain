@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>College Event Management System</title>
+      <style>
+         * {
+         box-sizing: border-box;
+         margin: 0;
+         padding: 0;
+         }
+         body {
+         font-family: 'Roboto', sans-serif;
+         background-color: #000000; /* Darker background for better contrast */
+         color: #f0f0f0; /* Light grey text for better readability */
+         }
+         header {
+         background: linear-gradient(360deg, #0b7d0b, #000000); /* Darker gradient for header */
+         color: #f0f0f0;
+         padding: 60px 20px; /* Increased padding for better spacing */
+         text-align: center;
+         }
+         header h1 {
+         font-size: 3em; /* Larger font size for the title */
+         margin-bottom: 15px;
+         }
+         header p {
+         font-size: 1.5em; /* Larger font size for the subtitle */
+         margin-bottom: 25px;
+         }
+         .btn {
+         background-color: #00cc00; /* Slightly darker green */
+         color: #1a1a1a; /* Darker text color */
+         padding: 15px 30px; /* Increased padding for better spacing */
+         text-decoration: none;
+         border-radius: 8px; /* More rounded corners */
+         transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+         }
+         .btn:hover {
+         background-color: #00ff00;
+         color: #004000;
+         transform: scale(1.05); /* Slightly enlarge on hover */
+         }
+         nav {
+         position: fixed; /* Fixed position to keep it at the top */
+         top: 0;
+         left: 0;
+         right: 0;
+         background-color: #1a1a1a; /* Darker background for nav */
+         padding: 15px 20px; /* Increased padding for better spacing */
+         z-index: 1000; /* Ensure it stays above other content */
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         }
+         .logo {
+         font-size: 2em; /* Larger font size for the logo */
+         color: #00ff00;
+         }
+         ul {
+         list-style: none;
+         display: flex;
+         }
+         ul li {
+         position: relative;
+         }
+         ul li a {
+         color: white;
+         padding: 15px 20px; /* Increased padding for better spacing */
+         text-decoration: none;
+         transition: background 0.3s;
+         font-size: 1.2em; /* Larger font size for menu items */
+         }
+         ul li a:hover {
+         color: #00cc00;
+         }
+         ul li:hover .dropdown {
+         display: block; /* Show dropdown on hover */
+         }
+         .dropdown {
+         display: none;
+         position: absolute;
+         background: #1a1a1a; /* Match the nav background */
+         min-width: 150px;
+         z-index: 1;
+         border-radius: 5px; /* Rounded corners for dropdown */
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Add shadow for dropdown */
+         }
+         .dropdown li {
+         display: block;
+         }
+         .dropdown li a {
+         padding: 10px 15px;
+         text-decoration: none;
+         color: white;
+         display: block;
+         transition: background 0.3s;
+         }
+         .dropdown li a:hover {
+         color: #00ff00;
+         }
+         nav .menu-toggle {
+         display: none;
+         cursor: pointer;
+         flex-direction: column; /* Stack the lines vertically */
+         justify-content: center;
+         align-items: center;
+         height: 30px; /* Height of the menu toggle */
+         }
+         nav .menu-toggle div {
+         width: 30px; /* Width of the lines */
+         height: 4px; /* Height of the lines */
+         background: white;
+         margin: 3px; /* Space between lines */
+         border-radius: 5px; /* Rounded edges for the lines */
+         transition: all 0.3s;
+         }
+         section {
+         padding: 100px 20px; /* Added padding to avoid overlap with fixed nav */
+         text-align: center;
+         }
+         h2 {
+         margin-bottom: 30px;
+         }
+         .feature-card {
+         background: #121212;
+         margin: 20px;
+         padding: 30px; /* Increased padding for better spacing */
+         border-radius: 10px;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
+         display: inline-block;
+         width: 300px; /* Increased width for feature cards */
+         }
+         .feature-card:hover {
+         transform: translateY(-10px);
+         box-shadow: 0 3px 10px #00ff00;
+         }
+         .feature-card h3 {
+         font-size: 1.8em; /* Larger font size for feature titles */
+         margin-bottom: 15px;
+         }
+         .feature-card p {
+         font-size: 1.2em; /* Larger font size for feature descriptions */
+         }
+         footer {
+         background-color: #0b0b0b; /* Darker footer background */
+         color: #f0f0f0;
+         text-align: center;
+         padding: 30px; /* Increased padding for better spacing */
+         position: relative;
+         bottom: 0;
+         width: 100%;
+         }
+         @media (max-width: 768px) {
+         nav ul {
+         display: none;
+         flex-direction: column;
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 80%; /* Leave some space on the right */
+         height: 100%;
+         background: #121212;
+         justify-content: center;
+         align-items: center;
+         z-index: 1000;
+         }
+         nav ul.show {
+         display: flex;
+         }
+         nav ul li {
+         margin-bottom: 20px; /* Add space between menu items */
+         }
+         nav ul li a {
+         padding: 20px;
+         text-decoration: none;
+         color: white;
+         font-size: 1.5em;
+         }
+         nav ul li a:hover {
+         background: none;
+         color: #00ff00;
+         }
+         nav ul li .dropdown {
+         position: static; /* Make dropdown static */
+         background: none;
+         box-shadow: none;
+         padding-left: 20px; /* Indent submenu items */
+         }
+         nav ul li .dropdown li {
+         margin-bottom: 10px; /* Add space between submenu items */
+         }
+         nav ul li .dropdown li a {
+         font-size: 1.2em; /* Slightly smaller font for submenu items */
+         }
+         nav .menu-toggle {
+         display: flex;
+         }
+         nav .menu-toggle.active div {
+         background: transparent;
+         }
+         nav .menu-toggle.active div:nth-child(1) {
+         transform: rotate(45deg);
+         margin-top: 8px;
+         }
+         nav .menu-toggle.active div:nth-child(3) {
+         transform: rotate(-45deg);
+         margin-top: -8px;
+         }
+         }
+         .dropdown li a:hover {
+         color: #00ff00;
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <h1>Eventify</h1>
+         <p>Your one-stop solution for managing college events seamlessly.</p>
+         <a href="#features" class="btn"><strong>Even Now !</strong></a>
+      </header>
+      <nav>
+         <label class="logo">Eventify</label>
+         <div class="menu-toggle" id="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+         </div>
+         <ul id="nav-links">
+            <li><a class="active" href="#">Home</a></li>
+            <li>
+               <a href="#">Events</a>
+               <ul class="dropdown">
+                  <li><a href="#">Upcoming Events</a></li>
+                  <li><a href="#">Ongoing Events</a></li>
+                  <li><a href="#">Past Events</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="#">Register</a>
+               <ul class="dropdown">
+                  <li><a href="">To Participate</a></li>
+                  <li><a href="">To Organize</a></li>
+                  <li><a href="">As Volunteer</a></li>
+               </ul>
+            </li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Announcement</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li>
+               <a href="">Contact Us</a>
+               <ul class="dropdown">
+                  <li><a href="">Lost/Found Report</a></li>
+                  <li><a href="">Contact Numbers</a></li>
+                  <li><a href="">Faculty</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="#">About Us</a>
+               <ul class="dropdown">
+                  <li><a href="">Meet Our Team</a></li>
+                  <li><a href="">FAQ</a></li>
+               </ul>
+            </li>
+            <li><a href="#">My Profile</a></li>
+         </ul>
+      </nav>
+      <section class="hero">
+         <div class="quote">
+            <p>"Eventify now!"</p>
+         </div>
+         <div class="media">
+            <img src="video-placeholder.jpg" alt="Video/Photo">
+         </div>
+      </section>
+      <section class="events">
+         <h2>Upcoming Events</h2>
+         <div class="event-cards">
+            <div class="event-card">
+               <img src="/images" alt="Event Image">
+               <button>Register</button>
+            </div>
+            <div class="event-card">
+               <img src="event2.jpg" alt="Event Image">
+               <button>Register</button>
+            </div>
+            <div class="event-card">
+               <img src="event3.jpg" alt="Event Image">
+               <button>Register</button>
+            </div>
+         </div>
+      </section>
+      <section class="participants">
+         <h2>Our Star Participants</h2>
+         <div class="participant-cards">
+            <div class="participant-card">
+               <img src="participant1.jpg" alt="Participant">
+               <p>View</p>
+            </div>
+            <div class="participant-card">
+               <img src="participant2.jpg" alt="Participant">
+               <p>View</p>
+            </div>
+            <div class="participant-card">
+               <img src="participant3.jpg" alt="Participant">
+               <p>View</p>
+            </div>
+         </div>
+      </section>
+      <section class="guests">
+         <h2>Recent Guests</h2>
+         <div class="guest-carousel">
+            <div class="guest-card">
+               <img src="guest1.jpg" alt="Guest">
+               <p>XYZ</p>
+            </div>
+            <div class="guest-card">
+               <img src="guest2.jpg" alt="Guest">
+               <p>ABC</p>
+            </div>
+            <div class="guest-card">
+               <img src="guest3.jpg" alt="Guest">
+               <p>PQR</p>
+            </div>
+            <!-- Add more guest cards as needed -->
+         </div>
+         <button class="carousel-prev">Prev</button>
+         <button class="carousel-next">Next</button>
+      </section>
+      <section class="testimonials">
+         <h2>Testimonials/Feedback</h2>
+         <div class="testimonial-carousel">
+            <div class="testimonial">
+               <img src="testimonial1.jpg" alt="Testimonial">
+               <p>"Great event!" - Name</p>
+            </div>
+            <div class="testimonial">
+               <img src="testimonial2.jpg" alt="Testimonial">
+               <p>"Amazing experience!" - Name</p>
+            </div>
+         </div>
+      </section>
+      <section id="features">
+         <h2>Features</h2>
+         <div class="feature-card">
+            <h3>Event Creation</h3>
+            <p>Easily create and manage events with our intuitive interface.</p>
+         </div>
+         <div class="feature-card">
+            <h3>RSVP Management</h3>
+            <p>Track RSVPs and manage attendees effortlessly.</p>
+         </div>
+         <div class="feature-card">
+            <h3>Notifications</h3>
+            <p>Send notifications and updates to attendees.</p>
+         </div>
+      </section>
+      <footer>
+         <p>Eventify &copy; All rights reserved.</p>
+      </footer>
+      <script>
+         // Smooth scroll to features section
+         document.addEventListener('DOMContentLoaded', () => {
+             const btn = document.querySelector('.btn');
+             btn.addEventListener('click', (e) => {
+                 e.preventDefault();
+                 document.querySelector('#features').scrollIntoView({
+                     behavior: 'smooth'
+                 });
+             });
+         
+             // Toggle menu for mobile view
+             const menuToggle = document.getElementById('menu-toggle');
+             const navLinks = document.getElementById('nav-links');
+         
+             menuToggle.addEventListener('click', (e) => {
+                 e.stopPropagation();
+                 navLinks.classList.toggle('show');
+                 menuToggle.classList.toggle('active');
+             });
+         
+             document.addEventListener('click', (e) => {
+                 if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                     navLinks.classList.remove('show');
+                     menuToggle.classList.remove('active');
+                 }
+             });
+         
+             const carousel = document.querySelector('.guest-carousel');
+             const prevButton = document.querySelector('.carousel-prev');
+             const nextButton = document.querySelector('.carousel-next');
+         
+             let currentIndex = 0;
+         
+             prevButton.addEventListener('click', () => {
+                 if (currentIndex > 0) {
+                     currentIndex--;
+                     carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                 }
+             });
+         
+             nextButton.addEventListener('click', () => {
+                 if (currentIndex < carousel.children.length - 1) {
+                     currentIndex++;
+                     carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                 }
+             });
+         });
+      </script>
+   </body>
+</html>

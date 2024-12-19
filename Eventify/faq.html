@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>FAQ - Frequently Asked Questions</title>
+      <style>
+         body {
+         font-family: Arial, sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #121212; /* Updated background color */
+         color: white; /* Set text color to white for better contrast */
+         }
+         header {
+         color: white;
+         background-color: #121212;
+         padding: 20px;
+         text-align: center;
+         }
+         .search-container {
+         text-align: center;
+         margin: 20px 0;
+         }
+         input[type="text"] {
+         width: 80%;
+         padding: 10px;
+         border: 2px solid rgba(0, 145, 27, 0.8); /* Updated border color */
+         border-radius: 5px;
+         background-color: #1e1e1e; /* Input background color */
+         color: white; /* Input text color */
+         }
+         .faq-container {
+         max-width: 800px;
+         margin: auto;
+         padding: 20px;
+         background: #121212; /* Card background color */
+         border-radius: 8px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+         }
+         .faq-item {
+         margin-bottom: 15px;
+         border: 2px solid rgba(13, 227, 2, 0.8); /* Updated border color for cards */
+         border-radius: 5px;
+         overflow: hidden;
+         transition: box-shadow 0.3s ease; /* Transition for glow effect */
+         }
+         .faq-item:hover {
+         box-shadow: 0 0 60px rgba(0, 145, 27, 0.8); /* Glow effect on hover */
+         }
+         .faq-question {
+         cursor: pointer;
+         color: rgba(255, 255, 255, 0.8);
+         padding: 10px;
+         border-radius: 5px;
+         }
+         .faq-answer {
+         display: none; /* Initially hide answers */
+         padding: 10px;
+         border-left: 3px solid rgba(0, 145, 27, 0.8); /* Border color */
+         margin-top: 5px;
+         max-height: 200px; /* Set a maximum height for answers */
+         overflow-y: auto; /* Allow scrolling within the answer if it exceeds max height */
+         }
+         footer {
+         text-align: center;
+         padding: 10px; /* Reduced padding */
+         background-color: #1e1e1e; /* Darker footer color */
+         color: white;
+         position: relative; /* Changed from fixed to relative */
+         bottom: 0;
+         left: 0;
+         right: 0; /* Ensure it stretches across the full width */
+         border-top: 2px solid rgba(0, 145, 27, 0.8); /* Top border for separation */
+         }
+         footer a {
+         color: rgba(13, 227, 2, 0.8); /* Link color */
+         text-decoration: none; /* Remove underline */
+         transition: color 0.3s ease; /* Transition for hover effect */
+         }
+         footer a:hover {
+         color: rgba(13, 227, 2, 1); /* Darker link color on hover */
+         }
+         /* Responsive Styles */
+         ```css
+         @media (max-width: 600px) {
+         header {
+         padding: 15px;
+         }
+         .contact-container {
+         padding: 15px;
+         max-width: 90%; /* Adjust max-width for smaller screens */
+         }
+         input[type="text"], input[type="email"], textarea {
+         padding: 8px;
+         }
+         button {
+         padding: 8px 16px;
+         }
+         footer {
+         padding: 15px;
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <h1>Frequently Asked Questions</h1>
+         <p>Your questions answered. If you need further assistance, feel free to reach out!</p>
+      </header>
+      <div class="search-container">
+         <input type="text" placeholder="Search FAQs..." id="faqSearch">
+      </div>
+      <div class="faq-wrapper">
+         <!-- New wrapper div -->
+         <div class="faq-container">
+            <div class="faq-item">
+               <h2 class="faq-question">What is your new policy on events?</h2>
+               <div class="faq-answer">
+                  <p>Our new policy allows for more flexible event scheduling and cancellations.</p>
+               </div>
+            </div>
+            <div class="faq-item">
+               <h2 class="faq-question">How can I register for upcoming events?</h2>
+               <div class="faq-answer">
+                  <p>You can register for upcoming events through our website or mobile app.</p>
+               </div>
+            </div>
+            <div class="faq-item">
+               <h2 class="faq-question">What types of events do you offer?</h2>
+               <div class="faq-answer">
+                  <p>We offer a variety of events including workshops, seminars, and networking events.</p>
+               </div>
+            </div>
+            <div class="faq-item">
+               <h2 class="faq-question">Can I cancel my registration?</h2>
+               <div class="faq-answer">
+                  <p>Yes, you can cancel your registration up to 48 hours before the event.</p>
+               </div>
+            </div>
+            <div class="faq-item">
+               <h2 class="faq-question">Is there a fee for attending events?</h2>
+               <div class="faq-answer">
+                  <p>Some events may have a fee, while others are free to attend. Please check the event details for more information.</p>
+               </div>
+            </div>
+            <div class="faq-item">
+               <h2 class="faq-question">How can I contact support?</h2>
+               <div class="faq-answer">
+                  <p>You can contact support via our contact page or by emailing support@example.com.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer>
+         <p>Have Any questions? Please <a href="contactus.html" class="contact-button">Contact us</a></p>
+      </footer>
+      <script>
+         document.querySelectorAll('.faq-question').forEach(question => {
+             question.addEventListener('click', () => {
+                 const answer = question.nextElementSibling; // Get the next sibling (the answer)
+                 if (answer.style.display === 'block') {
+                     answer.style.display = 'none'; // Hide the answer
+                 } else {
+                     answer.style.display = 'block'; // Show the answer
+                 }
+             });
+         });
+      </script>
+   </body>
+</html>

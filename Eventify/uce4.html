@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Web Development Workshop - Overview</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+      <style>
+         * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         }
+         body {
+         font-family: Arial, sans-serif;
+         background-color: #121212;
+         color: #fff;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         padding: 20px;
+         min-height: 100vh;
+         }
+         h1 {
+         color: #ffffff;
+         font-size: 2.5em;
+         margin-bottom: 20px;
+         font-family: 'Rubik', serif;
+         font-weight: 700; 
+         }
+         .event-container {
+         max-width: 800px;
+         width: 100%;
+         background: rgba(255, 255, 255, 0.1);
+         border: 2px solid rgba(13, 227, 2, 0.8);
+         border-radius: 12px;
+         padding: 20px;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+         backdrop-filter: blur(12px);
+         }
+         .event-image {
+         width: 100%;
+         border-radius: 12px;
+         margin-bottom: 20px;
+         }
+         .event-details {
+         margin-bottom: 20px;
+         }
+         .event-details h3{
+         font-size: 1.8em;
+         margin-bottom: 10px;
+         }
+         .event-details p {
+         color: #d3d3d3;
+         font-size: 1em;
+         margin-bottom: 10px;
+         }
+         .register-button {
+         padding: 10px 15px;
+         background-color: rgba(0, 145, 27, 0.8);
+         color: white;
+         border: none;
+         border-radius: 5px;
+         font-size: 1em;
+         font-weight: bold;
+         cursor: pointer;
+         transition: background-color 0.3s, color 0.3s;
+         margin-top: 20px;
+         }
+         .register-button:hover {
+         background-color: white;
+         color: #00911b;
+         }
+         .agenda, .speakers, .faq {
+         margin-top: 20px;
+         padding: 10px;
+         background: rgba(255, 255, 255, 0.05);
+         border-radius: 8px;
+         }
+         .social-media {
+         margin-top: 20px;
+         }
+         .social-media a {
+         color: rgba(13, 227, 2, 0.8);
+         margin: 0 10px;
+         text-decoration: none;
+         }
+         footer {
+         padding: 20px;
+         width: 100%;
+         text-align: center;
+         margin-top: auto;
+         color: rgba(13, 227, 2, 0.8);
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Web Development Workshop</h1>
+      <div class="event-container">
+         <img src="/images/uce4.avif" alt="Web Development Workshop" class="event-image">
+         <div class="event-details">
+            <h3>Description</h3>
+            <p>Enhance your web development skills in this hands-on workshop! Learn HTML, CSS, and JavaScript to build responsive websites.</p>
+            <h2>Date & Time</h2>
+            <p>Date: July 10, 2024</p>
+            <p>Time: 9:00 AM - 4:00 PM</p>
+            <h2>Location</h2>
+            <p>Tech Hub, 789 Developer Lane, City, State, ZIP</p>
+            <h2>Contact Information</h2>
+            <p>Email: info@webdevworkshop.com</p>
+            <p>Phone: (987) 654-3210</p>
+         </div>
+         <div class="agenda">
+            <h3>Agenda</h3>
+            <p>9:00 AM - Introduction to Web Development</p>
+            <p>10:30 AM - HTML Basics</p>
+            <p>12:00 PM - Lunch Break</p>
+            <p>1:00 PM - CSS Styling</p>
+            <p>3:00 PM - JavaScript Fundamentals</p>
+         </div>
+         <div class="speakers">
+            <h3>Speakers</h3>
+            <p>Ms. Alice Johnson - Frontend Developer at WebWorks</p>
+            <p>Mr. Bob Brown - Full Stack Developer at CodeCraft</p>
+         </div>
+         <div class="faq">
+            <h3>FAQs</h3>
+            <p>Q: Do I need prior experience?</p>
+            <p>A: No, this workshop is suitable for all skill levels.</p>
+         </div>
+         <button class="register-button">Register Now</button>
+         <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+         </div>
+      </div>
+      <footer>
+         &copy; 2024 Web Development Workshop. All rights reserved.
+      </footer>
+   </body>
+</html>

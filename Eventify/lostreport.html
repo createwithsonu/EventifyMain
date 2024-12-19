@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Lost Item Report</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+      <style>
+         * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         }
+         body {
+         font-family: Arial, sans-serif;
+         background-color: #121212;
+         color: #fff;
+         overflow-x: hidden;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         padding: 20px;
+         position: relative;
+         min-height: 100vh; /* Ensure body takes up full viewport height */
+         }
+         h1 {
+         color: #ffffff;
+         font-size: 2.5em;
+         margin-bottom: 20px;
+         font-family: 'Rubik', serif;
+         font-weight: 700; 
+         padding: 20px;
+         animation: fadeInDown 1s ease;
+         white-space: nowrap; /* Prevent text from wrapping */
+         }
+         .form-container {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         background: rgba(255, 255, 255, 0.1);
+         border: 2px solid rgba(13, 227, 2, 0.8);
+         border-radius: 12px;
+         padding: 40px;
+         width: 100%;
+         max-width: 600px; /* Set a max width for the form */
+         text-align: center; /* Center text in the form */
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+         backdrop-filter: blur(12px);
+         }
+         .form-container input, .form-container textarea {
+         width: 100%;
+         max-width: 400px; /* Set a max width for inputs */
+         padding: 10px;
+         margin: 10px 0;
+         border: 1px solid rgba(13, 227, 2, 0.8);
+         border-radius: 5px;
+         background: rgba(255, 255, 255, 0.2);
+         color: #fff;
+         }
+         .form-container textarea {
+         height: 100px; /* Fixed height for the description area */
+         overflow-y: visible;
+         resize: none;/* Allow vertical scrolling */
+         }
+         .form-container button {
+         padding: 10px 15px;
+         background-color: rgba(0, 145,  27, 0.8);
+         color: white;
+         border: none;
+         border-radius: 5px;
+         font-size: 1em;
+         font-weight: bold;
+         cursor: pointer;
+         transition: background-color 0.3s, color 0.3s; /* Add transition for smooth change */
+         width: 100%; /* Make buttons full width */
+         max-width: 200px; /* Set a max width for buttons */
+         margin: 5px 0; /* Space between buttons */
+         }
+         .form-container button:hover {
+         background-color: white;
+         color: #00911b; /* Green color */
+         }
+         footer {
+         padding: 20px;
+         width: 100%;
+         text-align: center;
+         margin-top: auto;
+         color: rgba(13, 227, 2, 0.8);
+         }
+         /* Thank You Card Styles */
+         .thank-you-card {
+         display: none; /* Hidden by default */
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background: rgba(255, 255, 255, 0.9);
+         color:#121212;
+         padding: 20px;
+         border-radius: 10px;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+         z-index: 1000; /* Ensure it appears above other content */
+         text-align: center;
+         }
+         .overlay {
+         display: none; /* Hidden by default */
+         position: fixed;
+         top: 0; /* Cover the entire viewport */
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+         z-index: 999; /* Ensure it appears above other content */
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Lost Item Report</h1>
+      <div class="form-container">
+         <form id="reportForm">
+            <input type="text" placeholder="Item Name" required>
+            <textarea placeholder="Description" rows="4" required></textarea>
+            <input type="date" placeholder="Date Lost" required>
+            <input type="text" placeholder="Location Lost" required>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Your Phone Number" required>
+            <div class="button-container">
+               <button type="submit">Submit</button>
+               <button type="reset">Reset</button>
+            </div>
+         </form>
+      </div>
+      <footer>
+         &copy; 2024 Lost Item Reporting System
+      </footer>
+      <!-- Thank You Card -->
+      <div class="overlay" id="overlay"></div>
+      <div class="thank-you-card" id="thankYouCard">
+         <h2>Thank You!</h2>
+         <p>Your Request has been submitted.</p>
+      </div>
+      <script>
+         document.getElementById('reportForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            document.getElementById('overlay').style.display = 'block'; // Show overlay
+            document.getElementById('thankYouCard').style.display = 'block'; // Show thank you card
+            
+            // Redirect to homepage after 3 seconds
+            setTimeout(function() {
+               window.location.href = 'lostorfound.html'; // Change 'homepage.html' to your actual homepage URL
+            }, 3000);
+         });
+      </script>
+   </body>
+</html>

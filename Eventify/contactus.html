@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Contact Us</title>
+      <style>
+         body {
+         font-family: Arial, sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #121212; /* Background color */
+         color: white; /* Text color */
+         }
+         header {
+         color: white;
+         background-color: #121212;
+         padding: 20px;
+         text-align: center;
+         }
+         .contact-container {
+         max-width: 800px;
+         margin: auto;
+         padding: 20px;
+         background: #121212; /* Card background color */
+         border-radius: 8px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+         }
+         label {
+         display: block; /* Make labels block elements */
+         margin-bottom: 5px; /* Space between label and input */
+         }
+         input[type="text"], input[type="email"], textarea {
+         width: 100%;
+         padding: 10px;
+         border: 2px solid rgba(0, 145, 27, 0.8); /* Border color */
+         border-radius: 5px;
+         background-color: #1e1e1e; /* Input background color */
+         color: white; /* Input text color */
+         margin-bottom: 15px;
+         box-sizing: border-box; /* Include padding in width */
+         }
+         textarea {
+         resize: vertical; /* Allow vertical resizing */
+         }
+         button {
+         padding: 10px 20px;
+         background-color: rgba(0, 145, 27, 0.8); /* Button background color */
+         color: white; /* Button text color */
+         border: none;
+         border-radius: 5px; /* Rounded corners */
+         cursor: pointer;
+         transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+         }
+         button:hover {
+         background-color: rgba(0, 145, 27, 1); /* Darker background on hover */
+         box-shadow: 0 0 10px rgba(0, 145, 27, 0.8); /* Glow effect on hover */
+         }
+         footer {
+         text-align: center;
+         padding: 10px; /* Reduced padding */
+         background-color: #1e1e1e; /* Darker footer color */
+         color: white;
+         position: fixed; /* Changed from relative to fixed */
+         bottom: 0;
+         left: 0;
+         right: 0; /* Ensure it stretches across the full width */
+         border-top: 2px solid rgba(0, 145, 27, 0.8); /* Top border for separation */
+         }
+         footer a {
+         color: rgba(13, 227, 2, 0.8); /* Link color */
+         text-decoration: none; /* Remove underline */
+         transition: color 0.3s ease; /* Transition for hover effect */
+         }
+         footer a:hover {
+         color: rgba(13, 227, 2, 1); /* Darker link color on hover */
+         }
+         /* Responsive Styles */
+         @media (max-width: 600px) {
+         header {
+         padding: 15px;
+         }
+         .contact-container {
+         padding: 15px;
+         max-width: 90%; /* Adjust max-width for smaller screens */
+         }
+         input[type="text"], input[type="email"], textarea {
+         padding: 8px;
+         }
+         button {
+         padding: 8px 16px;
+         }
+         footer {
+         padding: 15px;
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <h1>Contact Us</h1>
+         <p>We'd love to hear from you! Please fill out the form below.</p>
+      </header>
+      <div class="contact-container">
+         <form id="contactForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" required>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" required>
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" required>
+            <label for="message">Your Message</label>
+            <textarea id="message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+         </form>
+      </div>
+      <footer>
+         <p>You Can Check Our <a href="faq.html" class="contact-button">FAQ</a></p>
+      </footer>
+      <script>
+         document.getElementById('contactForm').addEventListener('submit', function(event) {
+             event.preventDefault();
+             // Here you can add your form submission logic (e.g., sending data to a server)
+             alert('Thank you for your message! We will get back to you shortly.');
+             this.reset(); // Reset the form after submission
+         });
+      </script>
+   </body>
+</html>

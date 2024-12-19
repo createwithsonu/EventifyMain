@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Lost and Found</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+      <style>
+         * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         }
+         body {
+         font-family: Arial, sans-serif;
+         background-color: #121212;
+         color: #fff;
+         overflow-x: hidden;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         padding: 20px;
+         position: relative;
+         min-height: 100vh; /* Ensure body takes up full viewport height */
+         }
+         h1 {
+         color: #ffffff;
+         font-size: 2.5em;
+         margin-bottom: 20px;
+         font-family: 'Rubik', serif;
+         font-weight: 700; 
+         padding: 20px;
+         animation: fadeInDown 1s ease;
+         white-space: nowrap; /* Prevent text from wrapping */
+         }
+         .container {
+         display: flex;
+         justify-content: center; /* Center the cards horizontally */
+         gap: 40px; /* Increased gap for better spacing */
+         max-width: 1200px;
+         width: 100%;
+         padding: 20px;
+         }
+         .card {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         background: rgba(255, 255, 255, 0.1);
+         border: 2px solid rgba(13, 227, 2, 0.8);
+         border-radius: 12px;
+         overflow: hidden;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+         backdrop-filter: blur(12px);
+         padding: 40px; /* Increased padding for larger cards */
+         width: 100%;
+         max-width: 400px; /* Set a max width for the cards */
+         text-align: center; /* Center text in the card */
+         }
+         .card h3 {
+         color: #ffffff;
+         margin: 0;
+         font-size: 1.8em; /* Increased font size for headings */
+         white-space: nowrap; /* Prevent line break */
+         overflow: hidden; /* Hide overflow */
+         text-overflow: ellipsis; /* Add ellipsis for overflow text */
+         }
+         .card p {
+         color: #d3d3d3; /* Light gray color for description */
+         font-size: 1em; /* Font size for description */
+         margin: 10px 0; /* Margin for spacing */
+         }
+         .button-container {
+         display: flex;
+         flex-direction: column; /* Stack buttons vertically */
+         align-items: center; /* Center buttons */
+         margin-top: 20px; /* Space above buttons */
+         }
+         .card button {
+         padding: 10px 15px;
+         background-color: rgba(0, 145,  27, 0.8);
+         color: white;
+         border: none;
+         border-radius: 5px;
+         font-size: 1em;
+         font-weight: bold;
+         cursor: pointer;
+         transition: background-color 0.3s, color 0.3s; /* Add transition for smooth change */
+         width: 100%; /* Make buttons full width */
+         max-width: 200px; /* Set a max width for buttons */
+         margin: 5px 0; /* Space between buttons */
+         }
+         .card button:hover {
+         background-color: white;
+         color: #00911b; /* Green color */
+         }
+         .items button {
+         padding: 10px 15px;
+         background-color: rgba(0, 145,  27, 0.8);
+         color: white;
+         border: none;
+         border-radius: 5px;
+         font-size: 1em;
+         font-weight: bold;
+         cursor: pointer;
+         transition: background-color 0.3s, color 0.3s; /* Add transition for smooth change */
+         width: 100%; /* Make buttons full width */
+         max-width: 200px; /* Set a max width for buttons */
+         margin: 5px 0;
+         }
+         .items button:hover {
+         background-color: white;
+         color: #00911b;
+         }
+         footer {
+         padding: 20px;
+         width: 100%;
+         text-align: center;
+         margin-top: auto;
+         color: rgba(13, 227, 2, 0.8);
+         }
+         @media (max-width: 600px) {
+         .container {
+         flex-direction: column; /* Stack cards vertically on small screens */
+         align-items: center; /* Center cards */
+         }
+         .card {
+         max-width: 90%; /* Allow cards to take more width on small screens */
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Lost/Found Items Report</h1>
+      <div class="container">
+         <div class="card">
+            <h3>Lost Report</h3>
+            <p>If you have lost an item, please provide details about the item, including its description and where it was last seen.</p>
+            <div class="button-container">
+               <a href="lostreport.html">
+               <button>Report Items</button>
+               </a>
+            </div>
+         </div>
+         <div class="card">
+            <h3>Found Report</h3>
+            <p>If you have found an item, please share its details, including a description and where it was found.</p>
+            <div class="button-container">
+               <a href="foundreport.html">
+               <button>Report Items</button>
+               </a>
+            </div>
+         </div>
+      </div>
+      <div class="items">
+         <a href="lostitems.html">
+         <button>View Lost Items</button>
+         </a>
+      </div>
+      <footer>
+         <p>&copy; Eventify. All rights reserved.</p>
+      </footer>
+   </body>
+</html>

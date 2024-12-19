@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Lost Items</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+      <style>
+         * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         }
+         body {
+         font-family: Arial, sans-serif;
+         background-color: #121212;
+         color: #fff;
+         overflow-x: hidden;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         padding: 20px;
+         position: relative;
+         min-height: 100vh;
+         }
+         h1 {
+         color: #ffffff;
+         font-size: 2.5em;
+         margin-bottom: 20px;
+         font-family: 'Rubik', serif;
+         font-weight: 700; 
+         padding: 20px;
+         }
+         table {
+         width: 100%;
+         max-width: 1200px;
+         border-collapse: collapse;
+         margin-top: 20px;
+         }
+         th, td {
+         padding: 15px;
+         text-align: left;
+         border: 1px solid rgba(13, 227, 2, 0.8);
+         background: rgba(255, 255, 255, 0.1);
+         transition: background-color 0.3s;
+         }
+         th {
+         background: rgba(13, 227, 2, 0.3);
+         }
+         tr:hover {
+         background-color: rgba(13, 227, 2, 0.2);
+         }
+         .item-name {
+         text-align: center;
+         white-space: nowrap; /* Prevent text from wrapping */
+         }
+         .item-image {
+         width: 50px; /* Adjust the size of the images */
+         height: auto;
+         display: block;
+         margin: 0 auto; /* Center the image */
+         }
+         button {
+         padding: 8px 12px;
+         background-color: rgba(0, 145, 27, 0.8);
+         color: white;
+         border: none;
+         border-radius: 5px;
+         font-size: 0.85em;
+         font-weight: bold;
+         cursor: pointer;
+         transition: background-color 0.3s, color 0.3s;
+         }
+         button:hover {
+         background-color: white;
+         color: #00911b;
+         }
+         @keyframes fadeInDown {
+         from {
+         opacity: 0;
+         transform: translateY(-20px);
+         }
+         to {
+         opacity: 1;
+         transform: translateY(0);
+         }
+         }
+         footer {
+         padding: 20px;
+         width: 100%;
+         text-align: center;
+         margin-top: auto;
+         color: rgba(13, 227, 2, 0.8);
+         font-family: 'LemonMilk', cursive;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Lost Items</h1>
+      <table>
+         <thead>
+            <tr>
+               <th>Sr.No.</th>
+               <th>Lost Items In Events</th>
+               <th>Event Name</th>
+               <th>Date</th>
+               <th>Details</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>1</td>
+               <td class="item-name">
+                  <img src="wallet.jpg" alt="Wallet" class="item-image">
+                  Wallet
+               </td>
+               <td>Music Festival</td>
+               <td>2024-01-15</td>
+               <td><button>View</button></td>
+            </tr>
+            <tr>
+               <td>2</td>
+               <td class="item-name">
+                  <img src="phone.jpg" alt="Phone" class="item-image">
+                  Phone
+               </td>
+               <td>Art Exhibition</td>
+               <td>2024-02-20</td>
+               <td><button>View</button></td>
+            </tr>
+            <tr>
+               <td>3</td>
+               <td class="item-name">
+                  <img src="backpack.jpg" alt="Backpack" class="item-image">
+                  Backpack
+               </td>
+               <td>Tech Conference</td>
+               <td>2024-03-10</td>
+               <td><button>View</button></td>
+            </tr>
+            <tr>
+               <td>4</td>
+               <td class="item-name">
+                  <img src="camera.jpg" alt="Camera" class="item-image">
+                  Camera
+               </td>
+               <td>Photography Workshop</td>
+               <td>2024-04-05</td>
+               <td><button>View</button></td>
+            </tr>
+            <tr>
+               <td>5</td>
+               <td class="item-name">
+                  <img src="keys.jpg" alt="Keys" class="item-image">
+                  Keys
+               </td>
+               <td>Outdoor Adventure</td>
+               <td>2024-05-12</td>
+               <td><button>View</button></td>
+            </tr>
+            <tr>
+               <td>6</td>
+               <td class="item-name">
+                  <img src="jacket.jpg" alt="Jacket" class="item-image">
+                  Jacket
+               </td>
+               <td>Winter Festival</td>
+               <td>2024-06-18</td>
+               <td><button>View</button></td>
+            </tr>
+            <tr>
+               <td>7</td>
+               <td class="item-name">
+                  <img src="glasses.jpg" alt="Glasses" class="item-image">
+                  Glasses
+               </td>
+               <td>Book Fair</td>
+               <td>2024-07-25</td>
+               <td><button>View</button></td>
+            </tr>
+            <tr>
+               <td>8</td>
+               <td class="item-name">
+                  <img src="watch.jpg" alt="Watch" class="item-image">
+                  Watch
+               </td>
+               <td>Charity Gala</td>
+               <td>2024-08-30</td>
+               <td><button>View</button></td>
+            </tr>
+            <tr>
+               <td>9</td>
+               <td class="item-name">
+                  <img src="umbrella.jpg" alt="Umbrella" class="item-image">
+                  Umbrella
+               </td>
+               <td>Street Market</td>
+               <td>2024-09-15</td>
+               <td><button>View</button></td>
+            </tr>
+            <tr>
+               <td>10</td>
+               <td class="item-name">
+                  <img src="book.jpg" alt="Book" class="item-image">
+                  Book
+               </td>
+               <td>Literature Festival</td>
+               <td>2024-10-22</td>
+               <td><button>View</button></td>
+            </tr>
+         </tbody>
+      </table>
+      <footer>
+         &copy; 2024 Lost Items Tracker
+      </footer>
+   </body>
+</html>

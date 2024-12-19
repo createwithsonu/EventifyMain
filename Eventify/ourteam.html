@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Our Team Members</title>
+      <style>
+         body {
+         position: relative; /* Make the body position relative for the pseudo-element */
+         background-color: #121212;
+         color: white;
+         font-family: Arial, sans-serif;
+         margin: 0;
+         padding: 20px;
+         padding-bottom: 60px; 
+         }     h1 {
+         text-align: center;
+         margin-bottom: 40px;
+         }
+         .team-container {
+         display: flex;
+         justify-content: center;
+         gap: 20px;
+         flex-wrap: wrap; /* Allow wrapping for smaller screens */
+         }
+         .team-member {
+         background: rgba(255, 255, 255, 0.1);
+         border: 2px solid green;
+         border-radius: 10px;
+         padding: 20px;
+         width: 200px;
+         text-align: center;
+         transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+         backdrop-filter: blur(10px);
+         }
+         .team-member:hover {
+         transform: scale(1.05);
+         box-shadow: 0 0 10px green, 0 0 20px green; /* Glow effect */
+         }
+         .team-member img {
+         width: 100%;
+         border-radius: 10px;
+         }
+         .member-name {
+         margin: 15px 0; /* Space between image and name */
+         font-size: 18px; /* Adjust font size as needed */
+         }
+         .view-button {
+         background-color: green;
+         color: white;
+         border: none;
+         padding: 10px;
+         border-radius: 5px;
+         cursor: pointer;
+         transition: background 0.3s, color 0.3s;
+         }
+         .view-button:hover {
+         background-color: white;
+         color: green;
+         }
+         footer {/* Fix the footer at the bottom */
+         bottom: 0; /* Align to the bottom */
+         left: 0; /* Align to the left */
+         right: 0; /* Align to the right */
+         padding: 20px;
+         text-align: center;
+         color: rgba(13, 227, 2, 0.8);
+         font-family: 'LemonMilk', cursive;
+         }
+         /* Media query for small devices */
+         @media (max-width: 600px) {
+         .team-container {
+         flex-direction: column; /* Stack cards vertically */
+         align-items: center; /* Center align cards */
+         width: 100%; /* Ensure the container takes full width */
+         }
+         .team-member {
+         width: 90%; /* Make cards take up more width */
+         margin-bottom: 20px; /* Add space between cards */
+         }
+         .team-member p {
+         font-size: 14px; /* Adjust font size for better readability */
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Our Team Members</h1>
+      <div class="team-container">
+         <div class="team-member">
+            <div class="image-container">
+               <img src="/images/sonu.jpg" alt="ASHUTOSH SHAKYA">
+            </div>
+            <div class="member-name">
+               <h3>ASHUTOSH SHAKYA</h3>
+               <p>Role: Project Manager</p>
+            </div>
+            <div class="button-container">
+               <a href="ashu.html">
+               <button class="view-button">View</button>
+               </a>
+            </div>
+         </div>
+         <div class="team-member">
+            <div class="image-container">
+               <img src="/images/sonu.jpg" alt="SONU PATEL">
+            </div>
+            <div class="member-name">
+               <h3>SONU PATEL</h3>
+               <p>Role: Developer</p>
+            </div>
+            <div class="button-container">
+               <a href="sonu.html">
+               <button class="view-button">View</button>
+               </a>
+            </div>
+         </div>
+         <div class="team-member">
+            <div class="image-container">
+               <img src="/images/sonu.jpg" alt="ALOK VIKRAM">
+            </div>
+            <div class="member-name">
+               <h3>ALOK VIKRAM</h3>
+               <p>Role: Designer</p>
+            </div>
+            <div class="button-container">
+               <a href="alok.html">
+               <button class="view-button">View</button>
+               </a>
+            </div>
+         </div>
+      </div>
+      <footer>
+         <p>&nbsp;&copy; 2024 Eventify. All rights reserved.&nbsp;</p>
+      </footer>
+   </body>
+</html>

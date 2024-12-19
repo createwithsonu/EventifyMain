@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>About Alok Vikram</title>
+      <style>
+         body {
+         background-color: #121212; /* Darker background for better contrast */
+         color: #ffffff;
+         font-family: Arial, sans-serif;
+         margin: 0;
+         padding: 20px;
+         line-height: 1.6;
+         padding-bottom: 60px; /* Add padding to the bottom to prevent overlap with footer */ /* Improved line height for readability */
+         }
+         h1 {
+         text-align: center; /* Centered heading */
+         margin-bottom: 20px;
+         font-size: 2.5em; /* Larger font size */
+         }
+         .about-container {
+         display: flex;
+         flex-wrap: wrap; /* Allow wrapping on smaller screens */
+         gap: 20px;
+         padding-top:2%;
+         justify-content: center; /* Center content */
+         }
+         .image-container {
+         flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+         max-width: 300px; /* Maximum width for image container */
+         }
+         .details-container {
+         flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+         max-width: 300px; /* Maximum width for details container */
+         }
+         .details-container h2 {
+         margin-top: 0;
+         font-size: 2em; /* Larger font size for the name */ /* Bright green color for the name */
+         text-align: ; /* Center the name */
+         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
+         }
+         .details-container h4 {
+         margin: 10px 0; /* Add margin for spacing */
+         }
+         .contact-heading {
+         font-size: 1.8em; /* Larger font size for the contact heading */ /* Yellow color for the contact heading */
+         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
+         margin-top: 40px; /* Add margin for spacing */
+         }
+         .role-container, .contact-container {
+         margin-top: 40px;
+         }
+         .social-icons {
+         display: flex;
+         gap: 10px;
+         justify-content: center; /* Center social icons */
+         }
+         .social-icons img {
+         width: 40px; /* Adjust size as needed */
+         height: 40px; /* Adjust size as needed */
+         transition: transform 0.3s; /* Smooth hover effect */
+         }
+         .social-icons img:hover {
+         transform: scale(1.1); /* Scale effect on hover */
+         }
+         /* Responsive image styling */
+         .image-container img {
+         width: 100%; /* Full width for smaller screens */
+         height: auto; /* Maintain aspect ratio */
+         border-radius: 10px;
+         }
+         footer {
+         position: fixed; /* Fix the footer at the bottom */
+         bottom: 0; /* Align to the bottom */
+         left: 0; /* Align to the left */
+         right: 0; /* Align to the right */
+         padding: 20px;
+         text-align: center;
+         background-color: #121212; /* Match the body background */
+         color: rgba(13, 227, 2, 0.8);
+         font-family: 'LemonMilk', cursive;
+         }
+         /* Media Queries for responsiveness */
+         @media (max-width: 600px) {
+         h1 {
+         font-size: 2em; /* Smaller heading on small screens */
+         }
+         .details-container h2 {
+         font-size: 1.8em; /* Adjust name size on small screens */
+         }
+         .contact-heading {
+         font-size: 1.5em; /* Adjust contact heading size on small screens */
+         }
+         .about-container {
+         flex-direction : column; /* Stack elements vertically */
+         align-items: center; /* Center items */
+         }
+         .details-container, .image-container {
+         max-width: 100%; /* Full width on small screens */
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <h1>About Our Team Member</h1>
+      <div class="about-container">
+         <div class="image-container">
+            <img src="/images/sonu.jpg" alt="ALOK VIKRAM">
+         </div>
+         <div class="details-container">
+            <h2 style="color: rgb(0, 214, 0);">ALOK VIKRAM</h2>
+            <p>
+               Roll no. : 2204850130010 <br>
+               Branch : Information Technology <br>
+               Year of Graduation : 2026 <br>
+               College : SR Institute of Management & Technology
+            </p>
+            <h2 class="contact-heading">Role in Project</h2>
+            <p>Alok Vikram is responsible for the development and implementation of the project features, ensuring that the technical requirements are met and collaborating with team members to achieve project goals.</p>
+            <h2 class="contact-heading">Contact</h2>
+            <p>Email: alokvikram169@gmail.com</p>
+            <p>Phone: +91-6394435914</p>
+            <div class="social-icons">
+               <a href="https://www.linkedin.com/in/alokvikram" target="_blank"><img src="/images/linkedin-icon.png" alt="LinkedIn"></a>
+               <a href="https://www.instagram.com/alokvikram" target="_blank"><img src="/images/instagram-icon.png" alt="Instagram"></a>
+               <a href="https://www.github.com/alokvikram" target="_blank"><img src="/images/github-icon.png" alt="GitHub"></a>
+            </div>
+         </div>
+      </div>
+      <footer>
+         Eventify &copy; All rights reserved.
+      </footer>
+   </body>
+</html>
